@@ -1,0 +1,19 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "underwriting-backend",
+      "runtimeExecutable": "/Users/mqmarques/Documents/Underwting & Risk Scoring Platform/backend/venv/bin/uvicorn",
+      "runtimeArgs": ["main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"],
+      "port": 8000,
+      "cwd": "backend"
+    },
+    {
+      "name": "underwriting-frontend",
+      "runtimeExecutable": "/usr/local/bin/npm",
+      "runtimeArgs": ["run", "dev"],
+      "port": 5180,
+      "cwd": "frontend"
+    }
+  ]
+}
