@@ -1,7 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from config import CORS_ORIGINS
-from database import init_db
+from database import init_db, SessionLocal
+from models import Submission
 from routers import submissions, portfolio
 
 app = FastAPI(
@@ -25,6 +26,14 @@ app.include_router(portfolio.router)
 @app.on_event("startup")
 def on_startup():
     init_db()
+    # Auto-seed if database is empty (needed for Vercel where /tmp is ephemeral)
+    db = SessionLocal()
+    try:
+        if db.query(Submission).count() == 0:
+            from seed import seed
+            seed()
+    finally:
+        db.close()
 
 
 @app.get("/api/health")
