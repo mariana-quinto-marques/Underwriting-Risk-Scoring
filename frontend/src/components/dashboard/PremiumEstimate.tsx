@@ -1,5 +1,5 @@
 import { Card } from '../ui/Card'
-import { formatCurrency, getRiskColor } from '../../lib/utils'
+import { formatCurrency } from '../../lib/utils'
 import type { RiskRating } from '../../types'
 
 interface PremiumEstimateProps {

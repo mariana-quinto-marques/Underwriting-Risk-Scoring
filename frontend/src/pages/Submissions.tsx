@@ -4,8 +4,8 @@ import { listSubmissions } from '../api/client'
 import { Card } from '../components/ui/Card'
 import { Badge } from '../components/ui/Badge'
 import { Button } from '../components/ui/Button'
-import { formatCurrency, formatIndustry, getStatusLabel, getRiskColor } from '../lib/utils'
-import type { SubmissionListItem, PaginatedSubmissions } from '../types'
+import { formatIndustry, getStatusLabel, getRiskColor } from '../lib/utils'
+import type { PaginatedSubmissions } from '../types'
 import { ClipboardList, ChevronLeft, ChevronRight, Plus } from 'lucide-react'
 
 export function Submissions() {
